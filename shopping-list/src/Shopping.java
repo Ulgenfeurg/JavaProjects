@@ -19,15 +19,23 @@ public class Shopping {
             int actionNumber = scanner.nextInt();
 
             if (actionNumber == 1) {
+                System.out.println("Введите название товара:");
                 String productName = scanner.next();
                 boolean isExist = false;
-                    for(int i = 0; i <= productCount; i++){
-                        if(Objects.equals(shoppingList[i], productName)){
+                if(productCount == 0){
+                    shoppingList[productCount] = productName;
+                    System.out.println("Товар " + productName + " добавлен в список под номером "+ (productCount +1));
+                    productCount++;
+                } else{
+                    for(int i = 0; i < productCount;i++){
+                        if(shoppingList[i].equals(productName)){
                             isExist = true;
+                            break;
                         } else {
                             isExist = false;
-                            continue;
                         }
+                    }
+                    System.out.println(isExist);
                     if(isExist) {
                         System.out.println("Такой товар уже есть в списке!");
                     } else {
@@ -35,9 +43,9 @@ public class Shopping {
                         System.out.println("Товар " + productName + " добавлен в список под номером "+ (productCount +1));
                         productCount++;
                     }
-                    if(productCount >7){
-                        System.out.println("Список слишком большой, придётся отложить покупку до следующего раза");
-                    }
+                }
+                if(productCount >7){
+                    System.out.println("Список слишком большой, придётся отложить покупку до следующего раза");
                 }
             } //добавить товар в список
             else if (actionNumber == 2){
