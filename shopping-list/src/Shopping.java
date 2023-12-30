@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 //import java.util.ArrayList;
 
@@ -20,19 +21,13 @@ public class Shopping {
             if (actionNumber == 1) {
                 String productName = scanner.next();
                 boolean isExist = false;
-                if(productCount == 0){
-                    shoppingList[productCount] = productName;
-                    System.out.println("Товар " + productName + " добавлен в список под номером "+ (productCount +1));
-                    productCount++;
-                } else{
                     for(int i = 0; i <= productCount; i++){
-                        if(shoppingList[i].equals(productName)){
+                        if(Objects.equals(shoppingList[i], productName)){
                             isExist = true;
                         } else {
                             isExist = false;
                             continue;
                         }
-                    }
                     if(isExist) {
                         System.out.println("Такой товар уже есть в списке!");
                     } else {
