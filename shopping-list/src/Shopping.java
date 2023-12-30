@@ -1,6 +1,4 @@
-import java.util.Objects;
 import java.util.Scanner;
-//import java.util.ArrayList;
 
 public class Shopping {
     public static void main(String[] args){
@@ -35,7 +33,7 @@ public class Shopping {
                             isExist = false;
                         }
                     }
-                    System.out.println(isExist);
+                    //System.out.println(isExist);
                     if(isExist) {
                         System.out.println("Такой товар уже есть в списке!");
                     } else {
